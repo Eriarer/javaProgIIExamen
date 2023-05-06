@@ -69,7 +69,8 @@ public class Complex extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
@@ -107,8 +108,8 @@ public class Complex extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(378, 406));
         setMinimumSize(new java.awt.Dimension(378, 406));
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0};
-        layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+        layout.columnWidths = new int[] { 0, 10, 0, 10, 0, 10, 0, 10, 0 };
+        layout.rowHeights = new int[] { 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0 };
         setLayout(layout);
 
         sen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -671,11 +672,6 @@ public class Complex extends javax.swing.JPanel {
         cursor.delete();
     }// GEN-LAST:event_delActionPerformed
 
-    private void areaClearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_areaClearActionPerformed
-        cursor.clear();
-        this.answer.setText("");
-    }// GEN-LAST:event_areaClearActionPerformed
-
     private void multiplieActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_multiplieActionPerformed
         cursor.insert("*");
     }// GEN-LAST:event_multiplieActionPerformed
@@ -731,6 +727,13 @@ public class Complex extends javax.swing.JPanel {
     private void lastAnswerActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_lastAnswerActionPerformed
         cursor.insert("ans(0)");
     }// GEN-LAST:event_lastAnswerActionPerformed
+
+    private void areaClearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_areaClearActionPerformed
+        while (this.getNextMemory()[0] != "")
+            ;
+        this.cursor.clear();
+        this.answer.setText("");
+    }// GEN-LAST:event_areaClearActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_equalsActionPerformed
         if (cursor.getEcuation().equals(""))

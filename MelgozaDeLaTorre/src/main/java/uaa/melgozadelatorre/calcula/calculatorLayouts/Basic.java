@@ -495,7 +495,9 @@ public class Basic extends javax.swing.JPanel {
     }// GEN-LAST:event_equalsActionPerformed
 
     private void areaClearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_areaClearActionPerformed
-        cursor.clear();
+        while (this.getNextMemory()[0] != "")
+            ;
+        this.cursor.clear();
         this.answer.setText("");
     }// GEN-LAST:event_areaClearActionPerformed
 
