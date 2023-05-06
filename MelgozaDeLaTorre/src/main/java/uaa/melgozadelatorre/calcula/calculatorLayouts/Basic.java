@@ -487,7 +487,7 @@ public class Basic extends javax.swing.JPanel {
             else
                 this.answer.setText(String.valueOf(sol));
         } catch (RuntimeException e) {
-            this.answer.setText("Error");
+            this.answer.setText(e.getMessage());
             return;
         }
 
@@ -537,7 +537,6 @@ public class Basic extends javax.swing.JPanel {
             // term = factor | term `*` factor | term `/` factor
             // factor = `+` factor | `-` factor | `(` expression `)` | number
             // | functionName `(` expression `)` | functionName factor
-            // | factor `^` factor
 
             double parseExpression() {
                 double x = parseTerm();
@@ -603,9 +602,6 @@ public class Basic extends javax.swing.JPanel {
                 } else {
                     throw new RuntimeException("Unexpected: " + (char) ch);
                 }
-
-                if (eat('^'))
-                    x = Math.pow(x, parseFactor()); // exponentiation
 
                 return x;
             }
