@@ -2,8 +2,6 @@ package uaa.melgozadelatorre.calcula.calculatorLayouts;
 
 import java.util.ArrayList;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.swing.JTextField;
 
 import uaa.melgozadelatorre.calcula.CursorManager;
@@ -13,7 +11,6 @@ public class Basic extends javax.swing.JPanel {
     private ArrayList<String> ecuationMem;
     private ArrayList<String> answerMem;
     private int memIndex;
-    private static ScriptEngine engine = new ScriptEngineManager().getEngineByName("JavaScript");
 
     public Basic() {
         initComponents();
@@ -63,10 +60,6 @@ public class Basic extends javax.swing.JPanel {
         this.answer = answer;
     }
 
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -537,7 +530,6 @@ public class Basic extends javax.swing.JPanel {
             // term = factor | term `*` factor | term `/` factor
             // factor = `+` factor | `-` factor | `(` expression `)` | number
             // | functionName `(` expression `)` | functionName factor
-
             double parseExpression() {
                 double x = parseTerm();
                 for (;;) {
@@ -589,20 +581,9 @@ public class Basic extends javax.swing.JPanel {
                     } else {
                         x = parseFactor();
                     }
-                    if (func.equals("sqrt"))
-                        x = Math.sqrt(x);
-                    else if (func.equals("sin"))
-                        x = Math.sin(Math.toRadians(x));
-                    else if (func.equals("cos"))
-                        x = Math.cos(Math.toRadians(x));
-                    else if (func.equals("tan"))
-                        x = Math.tan(Math.toRadians(x));
-                    else
-                        throw new RuntimeException("Unknown function: " + func);
                 } else {
                     throw new RuntimeException("Unexpected: " + (char) ch);
                 }
-
                 return x;
             }
         }.parse();

@@ -28,11 +28,15 @@ public class Calculadora extends javax.swing.JFrame {
         cursorManager = new CursorManager(ecuation);
         this.answer.setEditable(false);
         this.ecuation.setEditable(false);
+
         this.basic.setSize(378, 406);
         this.basic.setAnswer(answer);
         this.basic.setCursorManager(cursorManager);
+
         this.complex.setSize(378, 406);
-        this.complex.setTextAreas(answer, ecuation);
+        this.complex.setAnswer(answer);
+        this.complex.setCursorManager(cursorManager);
+
         this.buttonPlaceHolder.add(basic);
         this.buttonPlaceHolder.revalidate();
         this.buttonPlaceHolder.repaint();
@@ -246,10 +250,6 @@ public class Calculadora extends javax.swing.JFrame {
     private void rigthActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_rigthActionPerformed
         this.cursorManager.moveR();
     }// GEN-LAST:event_rigthActionPerformed
-
-    private void shiftActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**
      * @param args the command line arguments

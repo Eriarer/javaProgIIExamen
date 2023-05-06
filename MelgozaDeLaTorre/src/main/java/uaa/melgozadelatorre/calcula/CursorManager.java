@@ -56,7 +56,42 @@ public class CursorManager {
 
     /** mueve el cursor a la derecha y actualiza el texto */
     public void moveR() {
-        if (cursor < ecuation.length()) {
+
+        if (ecuation.length() - cursor > 4) {
+            if (ecuation.substring(cursor + 1, cursor + 5).equals("sqrt")) {
+                ecuation = ecuation.substring(0, cursor) + ecuation.substring(cursor + 1, cursor + 5) + pointer
+                        + ecuation.substring(cursor + 5);
+                cursor += 4;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
+        if (ecuation.length() - cursor > 3) {
+            System.out.println(ecuation.substring(cursor + 1, cursor + 4) + " " + (ecuation.length() - cursor));
+            if (ecuation.substring(cursor + 1, cursor + 4).equals("sen")
+                    || ecuation.substring(cursor + 1, cursor + 4).equals("cos")
+                    || ecuation.substring(cursor + 1, cursor + 4).equals("tan")
+                    || ecuation.substring(cursor + 1, cursor + 4).equals("log")
+                    || ecuation.substring(cursor + 1, cursor + 4).equals("ans")) {
+
+                ecuation = ecuation.substring(0, cursor) + ecuation.substring(cursor + 1, cursor + 4) + pointer
+                        + ecuation.substring(cursor + 4);
+
+                cursor += 3;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
+        if (ecuation.length() - cursor > 2) {
+            if (ecuation.substring(cursor + 1, cursor + 3).equals("ln")) {
+                ecuation = ecuation.substring(0, cursor) + ecuation.substring(cursor + 1, cursor + 3) + pointer
+                        + ecuation.substring(cursor + 3);
+                cursor += 2;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
+        if (cursor < ecuation.length() - 1) {
             ecuation = ecuation.substring(0, cursor) + ecuation.charAt(cursor + 1) + pointer
                     + ecuation.substring(cursor + 2);
             cursor++;
@@ -67,6 +102,37 @@ public class CursorManager {
 
     /** mueve el cursor a la izquierda y actualiza el texto */
     public void moveL() {
+        if (cursor >= 4) {
+            if (ecuation.substring(cursor - 4, cursor).equals("sqrt")) {
+                ecuation = ecuation.substring(0, cursor - 4) + pointer + ecuation.substring(cursor - 4, cursor)
+                        + ecuation.substring(cursor + 1);
+                cursor -= 4;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
+        if (cursor >= 3) {
+            if (ecuation.substring(cursor - 3, cursor).equals("sen")
+                    || ecuation.substring(cursor - 3, cursor).equals("cos")
+                    || ecuation.substring(cursor - 3, cursor).equals("tan")
+                    || ecuation.substring(cursor - 3, cursor).equals("log")
+                    || ecuation.substring(cursor - 3, cursor).equals("ans")) {
+                ecuation = ecuation.substring(0, cursor - 3) + pointer + ecuation.substring(cursor - 3, cursor)
+                        + ecuation.substring(cursor + 1);
+                cursor -= 3;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
+        if (cursor >= 2) {
+            if (ecuation.substring(cursor - 2, cursor).equals("ln")) {
+                ecuation = ecuation.substring(0, cursor - 2) + pointer + ecuation.substring(cursor - 2, cursor)
+                        + ecuation.substring(cursor + 1);
+                cursor -= 2;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
         if (cursor > 0) {
             ecuation = ecuation.substring(0, cursor - 1) + pointer + ecuation.charAt(cursor - 1)
                     + ecuation.substring(cursor + 1);
@@ -93,5 +159,44 @@ public class CursorManager {
         ecuation = text + pointer;
         cursor = text.length();
         ecuationTextArea.setText(ecuation);
+    }
+
+    /** elimina directamente lo que este a la izquierda del cursor */
+    public void delete() {
+        // si es sen cos tan log ln sqrt tiene que borrar todo el texto
+        if (cursor >= 4) {
+            if (ecuation.substring(cursor - 4, cursor).equals("sqrt")) {
+                ecuation = ecuation.substring(0, cursor - 4) + ecuation.substring(cursor);
+                cursor -= 4;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
+        if (cursor >= 3) {
+            if (ecuation.substring(cursor - 3, cursor).equals("sen")
+                    || ecuation.substring(cursor - 3, cursor).equals("cos")
+                    || ecuation.substring(cursor - 3, cursor).equals("tan")
+                    || ecuation.substring(cursor - 3, cursor).equals("log")
+                    || ecuation.substring(cursor - 3, cursor).equals("ans")) {
+                ecuation = ecuation.substring(0, cursor - 3) + ecuation.substring(cursor);
+                cursor -= 3;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
+        if (cursor >= 2) {
+            if (ecuation.substring(cursor - 2, cursor).equals("ln")) {
+                ecuation = ecuation.substring(0, cursor - 2) + ecuation.substring(cursor);
+                cursor -= 2;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
+        if (cursor > 0) {
+            ecuation = ecuation.substring(0, cursor - 1) + ecuation.substring(cursor);
+            cursor--;
+            ecuationTextArea.setText(ecuation);
+            return;
+        }
     }
 }
