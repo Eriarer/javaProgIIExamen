@@ -51,6 +51,13 @@ public class Complex extends javax.swing.JPanel {
         return memoria;
     }
 
+    /** retorna un valor doble de la ultima respuesta guardada */
+    private double getAnswer() {
+        if (answerMem.size() == 0)
+            return 0;
+        return Double.parseDouble(answerMem.get(answerMem.size() - 1));
+    }
+
     public void setCursorManager(CursorManager cursor) {
         this.cursor = cursor;
     }
@@ -715,10 +722,7 @@ public class Complex extends javax.swing.JPanel {
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_equalsActionPerformed
         if (cursor.getEcuation().equals(""))
             return;
-        String last = getPrevMemory()[1];
-        double lastAns = 0;
-        if (last != null)
-            lastAns = Double.parseDouble(last);
+        double lastAns = getAnswer();
         try {
             double sol = Complex.eval(cursor.getEcuation(), lastAns);
 

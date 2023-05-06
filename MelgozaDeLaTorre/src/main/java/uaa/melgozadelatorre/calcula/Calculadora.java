@@ -219,6 +219,12 @@ public class Calculadora extends javax.swing.JFrame {
                 return;
             ecuacion = memoria[0];
             resultado = memoria[1];
+        } else {
+            memoria = this.complex.getPrevMemory();
+            if (memoria[0] == null)
+                return;
+            ecuacion = memoria[0];
+            resultado = memoria[1];
         }
 
         cursorManager.updateText(ecuacion);
@@ -232,6 +238,12 @@ public class Calculadora extends javax.swing.JFrame {
         // va a la memoria siguiente si es que hay memoria siguiente y la actualiza
         if (isBasic) {
             memoria = this.basic.getNextMemory();
+            if (memoria[0] == null)
+                return;
+            ecuacion = memoria[0];
+            resultado = memoria[1];
+        } else {
+            memoria = this.complex.getNextMemory();
             if (memoria[0] == null)
                 return;
             ecuacion = memoria[0];

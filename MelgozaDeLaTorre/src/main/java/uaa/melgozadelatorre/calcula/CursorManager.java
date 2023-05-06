@@ -57,6 +57,15 @@ public class CursorManager {
     /** mueve el cursor a la derecha y actualiza el texto */
     public void moveR() {
 
+        if (ecuation.length() - cursor > 6) {
+            if (ecuation.substring(cursor + 1, cursor + 7).equals("ans(0)")) {
+                ecuation = ecuation.substring(0, cursor) + ecuation.substring(cursor + 1, cursor + 7) + pointer
+                        + ecuation.substring(cursor + 7);
+                cursor += 6;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
         if (ecuation.length() - cursor > 4) {
             if (ecuation.substring(cursor + 1, cursor + 5).equals("sqrt")) {
                 ecuation = ecuation.substring(0, cursor) + ecuation.substring(cursor + 1, cursor + 5) + pointer
@@ -102,6 +111,15 @@ public class CursorManager {
 
     /** mueve el cursor a la izquierda y actualiza el texto */
     public void moveL() {
+        if (cursor >= 6) {
+            if (ecuation.substring(cursor - 6, cursor).equals("ans(0)")) {
+                ecuation = ecuation.substring(0, cursor - 6) + pointer + ecuation.substring(cursor - 6, cursor)
+                        + ecuation.substring(cursor + 1);
+                cursor -= 6;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
         if (cursor >= 4) {
             if (ecuation.substring(cursor - 4, cursor).equals("sqrt")) {
                 ecuation = ecuation.substring(0, cursor - 4) + pointer + ecuation.substring(cursor - 4, cursor)
@@ -115,8 +133,7 @@ public class CursorManager {
             if (ecuation.substring(cursor - 3, cursor).equals("sen")
                     || ecuation.substring(cursor - 3, cursor).equals("cos")
                     || ecuation.substring(cursor - 3, cursor).equals("tan")
-                    || ecuation.substring(cursor - 3, cursor).equals("log")
-                    || ecuation.substring(cursor - 3, cursor).equals("ans")) {
+                    || ecuation.substring(cursor - 3, cursor).equals("log")) {
                 ecuation = ecuation.substring(0, cursor - 3) + pointer + ecuation.substring(cursor - 3, cursor)
                         + ecuation.substring(cursor + 1);
                 cursor -= 3;
@@ -164,6 +181,15 @@ public class CursorManager {
     /** elimina directamente lo que este a la izquierda del cursor */
     public void delete() {
         // si es sen cos tan log ln sqrt tiene que borrar todo el texto
+
+        if (cursor >= 6) {
+            if (ecuation.substring(cursor - 6, cursor).equals("ans(0)")) {
+                ecuation = ecuation.substring(0, cursor - 6) + pointer + ecuation.substring(cursor + 1);
+                cursor -= 6;
+                ecuationTextArea.setText(ecuation);
+                return;
+            }
+        }
         if (cursor >= 4) {
             if (ecuation.substring(cursor - 4, cursor).equals("sqrt")) {
                 ecuation = ecuation.substring(0, cursor - 4) + ecuation.substring(cursor);
@@ -176,8 +202,7 @@ public class CursorManager {
             if (ecuation.substring(cursor - 3, cursor).equals("sen")
                     || ecuation.substring(cursor - 3, cursor).equals("cos")
                     || ecuation.substring(cursor - 3, cursor).equals("tan")
-                    || ecuation.substring(cursor - 3, cursor).equals("log")
-                    || ecuation.substring(cursor - 3, cursor).equals("ans")) {
+                    || ecuation.substring(cursor - 3, cursor).equals("log")) {
                 ecuation = ecuation.substring(0, cursor - 3) + ecuation.substring(cursor);
                 cursor -= 3;
                 ecuationTextArea.setText(ecuation);
