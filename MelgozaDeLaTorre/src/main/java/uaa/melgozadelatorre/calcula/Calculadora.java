@@ -2,7 +2,6 @@ package uaa.melgozadelatorre.calcula;
 
 import java.awt.Image;
 
-import javax.net.ssl.TrustManager;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
