@@ -1,9 +1,20 @@
 package uaa.melgozadelatorre.calcula.calculatorLayouts;
 
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 public class Complex extends javax.swing.JPanel {
+    JTextField answer;
+    JTextArea ecuation;
 
     public Complex() {
         initComponents();
+    }
+
+    public void setTextAreas(JTextField answer, JTextArea ecuation) {
+        this.answer = answer;
+        this.ecuation = ecuation;
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated
