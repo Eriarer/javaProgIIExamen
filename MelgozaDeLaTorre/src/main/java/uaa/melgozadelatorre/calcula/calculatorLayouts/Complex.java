@@ -69,7 +69,7 @@ public class Complex extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
@@ -107,8 +107,8 @@ public class Complex extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(378, 406));
         setMinimumSize(new java.awt.Dimension(378, 406));
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] { 0, 10, 0, 10, 0, 10, 0, 10, 0 };
-        layout.rowHeights = new int[] { 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0 };
+        layout.columnWidths = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0};
+        layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
         setLayout(layout);
 
         sen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -167,6 +167,7 @@ public class Complex extends javax.swing.JPanel {
 
         log.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         log.setText("log");
+        log.setToolTipText("Log_10(x)");
         log.setMinimumSize(new java.awt.Dimension(50, 20));
         log.setPreferredSize(new java.awt.Dimension(60, 18));
         log.addActionListener(new java.awt.event.ActionListener() {
@@ -184,6 +185,7 @@ public class Complex extends javax.swing.JPanel {
 
         ln.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ln.setText("ln");
+        ln.setToolTipText("ln(x)");
         ln.setMinimumSize(new java.awt.Dimension(50, 20));
         ln.setPreferredSize(new java.awt.Dimension(60, 18));
         ln.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +235,7 @@ public class Complex extends javax.swing.JPanel {
 
         module.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         module.setText("%");
+        module.setToolTipText("Modulo");
         module.setMinimumSize(new java.awt.Dimension(50, 20));
         module.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,6 +252,7 @@ public class Complex extends javax.swing.JPanel {
 
         squareRoot.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         squareRoot.setText("sqrt");
+        squareRoot.setToolTipText("raiz cuadrada");
         squareRoot.setMinimumSize(new java.awt.Dimension(50, 20));
         squareRoot.setPreferredSize(new java.awt.Dimension(60, 18));
         squareRoot.addActionListener(new java.awt.event.ActionListener() {
@@ -265,7 +269,8 @@ public class Complex extends javax.swing.JPanel {
         add(squareRoot, gridBagConstraints);
 
         exponencial.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        exponencial.setText("n^x");
+        exponencial.setText("x^n");
+        exponencial.setToolTipText("potencia a la n");
         exponencial.setMinimumSize(new java.awt.Dimension(50, 20));
         exponencial.setPreferredSize(new java.awt.Dimension(60, 18));
         exponencial.addActionListener(new java.awt.event.ActionListener() {
@@ -443,6 +448,7 @@ public class Complex extends javax.swing.JPanel {
 
         del.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         del.setText("DEL");
+        del.setToolTipText("eliminar caracter");
         del.setMinimumSize(new java.awt.Dimension(50, 20));
         del.setPreferredSize(new java.awt.Dimension(60, 18));
         del.addActionListener(new java.awt.event.ActionListener() {
@@ -460,6 +466,7 @@ public class Complex extends javax.swing.JPanel {
 
         areaClear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         areaClear.setText("AC");
+        areaClear.setToolTipText("limpiar pantalla");
         areaClear.setMinimumSize(new java.awt.Dimension(50, 20));
         areaClear.setPreferredSize(new java.awt.Dimension(60, 18));
         areaClear.addActionListener(new java.awt.event.ActionListener() {
@@ -557,6 +564,7 @@ public class Complex extends javax.swing.JPanel {
 
         powOfTen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         powOfTen.setText("x10^x");
+        powOfTen.setToolTipText("Notacion cientifica base 10");
         powOfTen.setMinimumSize(new java.awt.Dimension(50, 20));
         powOfTen.setPreferredSize(new java.awt.Dimension(60, 18));
         powOfTen.addActionListener(new java.awt.event.ActionListener() {
@@ -574,6 +582,7 @@ public class Complex extends javax.swing.JPanel {
 
         lastAnswer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lastAnswer.setText("Ans");
+        lastAnswer.setToolTipText("resultado anterior");
         lastAnswer.setMinimumSize(new java.awt.Dimension(50, 20));
         lastAnswer.setPreferredSize(new java.awt.Dimension(60, 18));
         lastAnswer.addActionListener(new java.awt.event.ActionListener() {
