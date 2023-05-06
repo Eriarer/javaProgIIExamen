@@ -27,13 +27,13 @@
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-    <Property name="useNullLayout" type="boolean" value="true"/>
+    <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="display">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="14" y="14" width="-1" height="112"/>
+          <AbsoluteConstraints x="14" y="14" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
 
@@ -86,7 +86,7 @@
     <Container class="javax.swing.JPanel" name="optionsPanel">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="14" y="126" width="378" height="56"/>
+          <AbsoluteConstraints x="14" y="126" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
 
@@ -186,7 +186,7 @@
     <Container class="javax.swing.JPanel" name="buttonPlaceHolder">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="14" y="182" width="378" height="406"/>
+          <AbsoluteConstraints x="14" y="182" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
 

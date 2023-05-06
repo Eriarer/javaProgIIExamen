@@ -70,7 +70,7 @@ public class Complex extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
@@ -105,11 +105,15 @@ public class Complex extends javax.swing.JPanel {
         lastAnswer = new javax.swing.JButton();
         equals = new javax.swing.JButton();
 
+        setFocusCycleRoot(true);
+        setFocusable(false);
         setMaximumSize(new java.awt.Dimension(378, 406));
         setMinimumSize(new java.awt.Dimension(378, 406));
+        setPreferredSize(new java.awt.Dimension(378, 406));
+        setRequestFocusEnabled(false);
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] { 0, 10, 0, 10, 0, 10, 0, 10, 0 };
-        layout.rowHeights = new int[] { 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0 };
+        layout.columnWidths = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0};
+        layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
         setLayout(layout);
 
         sen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

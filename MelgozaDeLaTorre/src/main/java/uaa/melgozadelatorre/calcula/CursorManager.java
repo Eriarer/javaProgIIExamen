@@ -76,7 +76,6 @@ public class CursorManager {
             }
         }
         if (ecuation.length() - cursor > 3) {
-            System.out.println(ecuation.substring(cursor + 1, cursor + 4) + " " + (ecuation.length() - cursor));
             if (ecuation.substring(cursor + 1, cursor + 4).equals("sen")
                     || ecuation.substring(cursor + 1, cursor + 4).equals("cos")
                     || ecuation.substring(cursor + 1, cursor + 4).equals("tan")
