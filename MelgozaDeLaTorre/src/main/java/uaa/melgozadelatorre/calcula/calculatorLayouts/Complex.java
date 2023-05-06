@@ -68,6 +68,7 @@ public class Complex extends javax.swing.JPanel {
 
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
@@ -112,6 +113,7 @@ public class Complex extends javax.swing.JPanel {
 
         sen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         sen.setText("sen");
+        sen.setToolTipText("sen(x)");
         sen.setMinimumSize(new java.awt.Dimension(50, 20));
         sen.setPreferredSize(new java.awt.Dimension(60, 18));
         sen.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +131,7 @@ public class Complex extends javax.swing.JPanel {
 
         cos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cos.setText("cos");
+        cos.setToolTipText("cos(x)");
         cos.setMinimumSize(new java.awt.Dimension(50, 20));
         cos.setPreferredSize(new java.awt.Dimension(60, 18));
         cos.addActionListener(new java.awt.event.ActionListener() {
@@ -146,6 +149,7 @@ public class Complex extends javax.swing.JPanel {
 
         tan.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tan.setText("tan");
+        tan.setToolTipText("tan(x)");
         tan.setMinimumSize(new java.awt.Dimension(50, 20));
         tan.setPreferredSize(new java.awt.Dimension(60, 18));
         tan.addActionListener(new java.awt.event.ActionListener() {
@@ -773,7 +777,7 @@ public class Complex extends javax.swing.JPanel {
 
             // Grammar:
             // expression = term | expression `+` term | expression `-` term
-            // term = factor | term `*` factor | term `/` factor
+            // term = factor | term `*` factor | term `/` factor | term `%` module
             // factor = `+` factor | `-` factor | `(` expression `)` | number
             // | functionName `(` expression `)` | functionName factor
             // | factor `^` factor
@@ -797,8 +801,9 @@ public class Complex extends javax.swing.JPanel {
                         x *= parseFactor(); // multiplication
                     else if (eat('/'))
                         x /= parseFactor(); // division
-                    else
-                        return x;
+                    else if (eat('%'))
+                        x %= parseFactor(); // module
+                    return x;
                 }
             }
 

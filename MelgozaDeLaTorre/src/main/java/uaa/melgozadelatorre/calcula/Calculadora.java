@@ -61,6 +61,7 @@ public class Calculadora extends javax.swing.JFrame {
         buttonPlaceHolder = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
         setMinimumSize(new java.awt.Dimension(420, 650));
         setResizable(false);
         getContentPane().setLayout(null);
@@ -83,6 +84,7 @@ public class Calculadora extends javax.swing.JFrame {
         getContentPane().add(display);
         display.setBounds(14, 14, 378, 112);
 
+        modeToggle.setToolTipText("Cambia de basico a cientifico");
         modeToggle.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 modeToggleMousePressed(evt);
