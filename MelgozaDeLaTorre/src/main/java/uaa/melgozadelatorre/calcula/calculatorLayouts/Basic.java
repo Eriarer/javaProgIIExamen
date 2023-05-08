@@ -3,6 +3,7 @@ package uaa.melgozadelatorre.calcula.calculatorLayouts;
 import java.util.ArrayList;
 
 import javax.swing.JTextField;
+import javax.xml.catalog.Catalog;
 
 import uaa.melgozadelatorre.calcula.CursorManager;
 
@@ -495,8 +496,14 @@ public class Basic extends javax.swing.JPanel {
     }// GEN-LAST:event_equalsActionPerformed
 
     private void areaClearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_areaClearActionPerformed
-        while (this.getNextMemory()[0] != "")
-            ;
+        while (this.getNextMemory()[0] != "" || this.getNextMemory()[0] != null)
+            try {
+                Thread.sleep(100);
+                if (this.getNextMemory()[0] == "" || this.getNextMemory()[0] == null)
+                    break;
+            } catch (InterruptedException e) {
+                System.out.println(e.getMessage());
+            }
         this.cursor.clear();
         this.answer.setText("");
     }// GEN-LAST:event_areaClearActionPerformed

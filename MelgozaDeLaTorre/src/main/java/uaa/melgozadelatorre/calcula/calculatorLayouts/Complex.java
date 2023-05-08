@@ -70,7 +70,8 @@ public class Complex extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
@@ -112,8 +113,8 @@ public class Complex extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(378, 406));
         setRequestFocusEnabled(false);
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0};
-        layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
+        layout.columnWidths = new int[] { 0, 10, 0, 10, 0, 10, 0, 10, 0 };
+        layout.rowHeights = new int[] { 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0 };
         setLayout(layout);
 
         sen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -733,8 +734,14 @@ public class Complex extends javax.swing.JPanel {
     }// GEN-LAST:event_lastAnswerActionPerformed
 
     private void areaClearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_areaClearActionPerformed
-        while (this.getNextMemory()[0] != "")
-            ;
+        while (this.getNextMemory()[0] != "" || this.getNextMemory()[0] != null)
+            try {
+                Thread.sleep(100);
+                if (this.getNextMemory()[0] == "" || this.getNextMemory()[0] == null)
+                    break;
+            } catch (InterruptedException e) {
+                System.out.println(e.getMessage());
+            }
         this.cursor.clear();
         this.answer.setText("");
     }// GEN-LAST:event_areaClearActionPerformed
